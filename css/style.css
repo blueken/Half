@@ -17,8 +17,8 @@
 
 .clever {
 	position: absolute;
-	left:50%;
-	top:50%;
+	left:0;
+	top:0;
 	/*background-color: red;*/
 	display: block;
 	
@@ -28,25 +28,25 @@
 a.question {
 	width: 175px;
 	height: 45px;
-	margin-left: 115px;
-	margin-top: -168px;
+	margin-left: 435px;
+	margin-top: 311px;
 }
 
 a.step1 {
 	width: 360px;
 	height: 140px;
-	margin-left: -190px;
-	margin-top: -25px;
+	margin-left: 128px;
+	margin-top: 455px;
 }
 a.step2 {
 	width: 360px;
 	height: 140px;
-	margin-left: -190px;
-	margin-top: 128px;
+	margin-left: 128px;
+	margin-top: 605px;
 }
 a.step3 {
 	width: 360px;
 	height: 140px;
-	margin-left: -190px;
-	margin-top: 280px;
+	margin-left: 128px;
+	margin-top: 760px;
 }
