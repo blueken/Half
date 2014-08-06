@@ -1,8 +1,18 @@
 /*override component.css*/
 .pt-page-1 {
-	position: relative;
-	background: #ff6476 url(../img/bg.jpg) center center no-repeat;
-	background-size: cover;
+	background-color: #ff6476;
+	overflow: auto;
+}
+.pt-page-1 img.autofit_window_bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.pt-page-1 img.autofit_window_bgwidth {
+	width: 100%;
+}
+.pt-page-1 img.autofit_window_bgheight {
+	height: 100%;
 }
 
 .clever {
