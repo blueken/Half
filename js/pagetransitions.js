@@ -84,8 +84,97 @@ var PageTransitions = (function() {
             ++animcursor;
         } );
 
-	}
+         /*bob added*/
 
+        $(".clever.question").click(function() {
+        	pageFromTo(animcursorCheck(), 0, 1);
+        	++animcursor;
+        });
+        $(".close").click(function() {
+        	pageFromTo(animcursorCheck(), 1, 0);
+        	++animcursor;
+        });
+        $(".step1,.step2,.step3").click(function() {
+        	pageFromTo(animcursorCheck(), 0, 2);
+        	++animcursor;
+        });
+        $(".choose").click(function() {
+        	pageFromTo(animcursorCheck(), 1, 2);
+        	++animcursor;
+        });
+
+        /*bob added end*/
+
+	}
+	function pageFromTo(options, from , to ) {
+		var animation = (options.animation) ? options.animation : options;
+
+		if( isAnimating ) {
+			return false;
+		}
+
+		isAnimating = true;
+
+		var $currPage = $pages.eq( from );
+
+		var $nextPage = $pages.eq( to ).addClass( 'pt-page-current' ),
+			outClass = '', inClass = '';
+
+		outClass = 'pt-page-rotateCubeTopOut pt-page-ontop';
+		inClass = 'pt-page-rotateCubeTopIn';
+
+
+
+
+		if((from === 0) && (to === 1)) {
+
+				outClass = 'pt-page-scaleDown';
+				inClass = 'pt-page-scaleUpDown pt-page-delay300';
+
+		} else if ((from === 1) && (to === 0)) {
+				outClass = 'pt-page-scaleDownUp';
+				inClass = 'pt-page-scaleUp pt-page-delay300';
+
+		} else if ((from === 0) && (to === 2)) {
+
+				outClass = 'pt-page-moveToTopEasing pt-page-ontop';
+				inClass = 'pt-page-moveFromBottom';
+
+		} else if ((from === 2) && (to === 0)) {
+				outClass = 'pt-page-moveToBottomEasing pt-page-ontop';
+				inClass = 'pt-page-moveFromTop';
+				
+		} else if ((from === 1) && (to === 2)) {
+
+				outClass = 'pt-page-moveToTopEasing pt-page-ontop';
+				inClass = 'pt-page-moveFromBottom';
+
+		} else if ((from === 2) && (to === 0)) {
+				outClass = 'pt-page-moveToBottomEasing pt-page-ontop';
+				inClass = 'pt-page-moveFromTop';
+				
+		}
+
+		$currPage.addClass( outClass ).on( animEndEventName, function() {
+			$currPage.off( animEndEventName );
+			endCurrPage = true;
+			if( endNextPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		$nextPage.addClass( inClass ).on( animEndEventName, function() {
+			$nextPage.off( animEndEventName );
+			endNextPage = true;
+			if( endCurrPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		if( !support ) {
+			onEndAnimation( $currPage, $nextPage );
+		}
+	}
 	function nextPage(options ) {
 		var animation = (options.animation) ? options.animation : options;
 
@@ -423,7 +512,14 @@ var PageTransitions = (function() {
 		$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
 		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
 	}
-
+	/*bob added end*/
+	function resetPageByIdx( idx, old_idx ) {
+		/*this function added by bob*/
+		var $outpage = $pages.eq( idx );
+		$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
+		var $inpage = $pages.eq( old_idx );
+		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
+	}
 	init();
 
 	return {

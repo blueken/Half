@@ -1,4 +1,7 @@
 /*override component.css*/
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
 .pt-page-1 {
 	background-color: #ff6476;
 	overflow: auto;
@@ -57,7 +60,16 @@ a.step3 {
 	margin-top: 760px;
 }
 
-
+a.gotoclass {
+	background: url("../img/darrow.png") center center no-repeat;
+	text-indent: -2000em;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 30px;
+	height: 18px;
+	display: block;
+}
 /*question*/
 .colorlayer {
 	width: 100%;
