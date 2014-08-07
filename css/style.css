@@ -25,7 +25,7 @@ img.autofit_window_bgheight {
 	position: absolute;
 	left:0;
 	top:0;
-	background-color: red;
+	/*background-color: red;*/
 	display: block;
 	
 	text-indent: -2000em;

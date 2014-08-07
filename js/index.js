@@ -10,7 +10,7 @@ $(function() {
 	// }).trigger("resize");
 
 	domAutoFitWindow(".clever");
-
+	qaAutoFitWindow();
 
 	selectClassLogin();
 });
