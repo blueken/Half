@@ -13,6 +13,7 @@
 	background-color: #333;
 	overflow: auto;
 }
+
 img.autofit_window_bgwidth {
 	width: 100%;
 }
@@ -106,4 +107,156 @@ a.choose {
 	height: 82px;
 	margin-top: 965px;
 
+}
+/*question end*/
+
+/*select class*/
+.pt-page-3 {
+	background-color: #e2e2e2;
+	font-size: 1.4rem;
+	font-family: "Microsoft YaHei", "黑体";
+	overflow: auto;
+}
+
+.pt-page-3 .header {
+	background-color: #342a35;
+	height: 82px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.pt-page-3 .header a.control {
+	display: block;
+	width: 82px;
+	height: 82px;
+	line-height: 82px;
+	margin: 0 auto;
+	position: absolute;
+	text-align: center;
+	top: 0;
+}
+.pt-page-3 .header a.prev {
+	left: 0px;
+}
+.pt-page-3 .header a.next {
+
+	right: 0px;
+}
+.pt-page-3 .mask {
+	width: 79%;
+	overflow: hidden;
+	margin: 0 10%;
+}
+.pt-page-3 ul.menu {
+	overflow: hidden;
+	line-height: 42px;
+	height: 42px;
+	margin-top: 20px;
+	width: 1200px;
+}
+.pt-page-3 ul.menu li {
+	float: left;
+
+	background-color: #d65869;
+	margin-right: 10px;
+	border-radius: 6px;
+	padding: 0 10px;
+	width: 130px;
+	text-align: center;
+}
+ul.course_items {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+ul.course_items li {
+	background-color: #ffffff;
+	height: 255px;
+	width: 94%;
+	margin: 18px 3%;
+	padding: 20px;
+}
+ul.course_items a.item {
+	display: block;
+	width: 640px;
+	height: 216px;
+	margin: 0 auto;
+}
+
+ul.course_items li img {
+	float: left;
+}
+ul.course_items li h3, ul.course_items li p {
+	margin-left: 62%;
+	color: #342a35;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	font-size: 1.6rem;
+}
+ul.course_items li .price {
+	color: #fa4444;
+	font-size: 1.6rem;
+}
+ul.course_items li button {
+	border: 0;
+	outline: 0;
+	width: 215px;
+	height: 61px;
+	text-indent: -2000rem;
+	cursor: pointer;
+	background: url("../img/detail.png") center center no-repeat;
+	/*margin-left: 20px;*/
+}
+
+
+@media (max-width: 640px) {
+	/*select class*/
+	.pt-page-3 {
+		font-size: 1rem;
+	}
+	
+	.pt-page-3 ul.menu li {
+
+		border-radius: 4px;
+		padding: 2 3px;
+		width: 90px;
+
+	}
+
+	ul.course_items li img {
+		max-width: 160px;
+		height: auto;
+	}
+
+	ul.course_items li h3, ul.course_items li p {
+		margin-left: 58%;
+		margin-top: 0px;
+		margin-bottom: 13px;
+		font-size: 1rem;
+	}
+	ul.course_items li .price {
+		font-size: 20px;
+	}
+	ul.course_items li button {
+
+		width: 108px;
+		max-height: 30px;
+		background-size: cover;
+	}
+
+	ul.course_items li {
+		
+		height: 135px;
+		width: 94%;
+		margin: 10px 3%;
+		padding: 3% 3% 3% 2%;
+		
+	}
+	ul.course_items li .price {
+		font-size: 1rem;
+	}
+	.pt-page-3 .header a.control {
+		
+		width: 41px;
+	}
 }

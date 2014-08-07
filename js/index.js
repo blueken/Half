@@ -10,9 +10,38 @@ $(function() {
 	// }).trigger("resize");
 
 	domAutoFitWindow(".clever");
-	qaAutoFitWindow();
-});
 
+
+	selectClassLogin();
+});
+function selectClassLogin() {
+	$(".control.next").click(function(){
+		var li_width = $(window).width() > 640 ? 130 : 90;
+		var li_margin = 10;
+		var step = $(window).width() * 0.65;
+		var oldpos = parseInt($("ul.menu").css("margin-left"));
+		var newpos = oldpos - step;
+		
+		var bHiddenExist = !( Math.abs(oldpos) + $(window).width()*0.8 > $("ul.menu li").length * (li_width + li_margin) );
+		if (bHiddenExist) {
+			$("ul.menu").animate({
+				"marginLeft": newpos+'px'
+			});
+		}
+		
+	});
+	$(".control.prev").click(function(){
+		var step = $(window).width() * 0.65;
+		var oldpos = parseInt($("ul.menu").css("margin-left"));
+		var newpos = oldpos + step;
+		if (oldpos < 0) {
+
+			$("ul.menu").animate({
+				"marginLeft": newpos+'px'
+			});
+		}
+	});
+}
 	
 function bgAutoFitWindow(img_selector) {
 	/*
