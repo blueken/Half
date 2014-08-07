@@ -2,6 +2,7 @@ $(function() {
 
 
 	bgAutoFitWindow(".autofit_window_bg");
+	bgAutoFitWindow(".autofit_qa_bg");
 
 	// $(window).bind("resize", function(){
 	// 		// autoFitPos('.clever');
@@ -9,7 +10,7 @@ $(function() {
 	// }).trigger("resize");
 
 	domAutoFitWindow(".clever");
-	
+	qaAutoFitWindow();
 });
 
 	
@@ -49,6 +50,48 @@ function domAutoFitWindow(dom_selector) {
 	var theWindow        = $(window);
 	theWindow.resize(function() {
 		autoFitPos(dom_selector);
+	}).trigger("resize");
+}
+
+function qaAutoFitWindow() {
+	var theWindow        = $(window);
+	var CLOSE_WIDTH = 51;
+	var CLOSE_HEIGHT = 51;
+	var CLOSE_MARGIN_TOP = 51;
+	var CLOSE_MARGIN_RIGHT = 27;
+	var CHOOSE_WIDTH = 290;
+	var CHOOSE_HEIGHT = 80;
+	var CHOOSE_MARGIN_TOP = 960;
+	var CLOSE_RATIO = CLOSE_WIDTH / CLOSE_HEIGHT;
+	var CHOOSE_RATIO = CHOOSE_WIDTH / CHOOSE_HEIGHT;
+
+	var PIC_HEIGHT = 1080;
+	var PIC_WIDTH =  640;
+	var perfect_ratio = PIC_WIDTH / PIC_HEIGHT;
+
+	var big_fish = 0;
+	var scale = 1;
+	theWindow.resize(function() {
+		var win_width = $(window).width();
+		var win_height = $(window).height();
+
+		if(win_width / win_height < perfect_ratio) {
+			big_fish = win_height;
+			scale = win_height / PIC_HEIGHT;
+		} else {
+			big_fish = win_width;
+			scale = win_width / PIC_WIDTH;
+		}
+
+		$(".close").css("width", CLOSE_WIDTH * scale + "px");
+		$(".close").css("height", CLOSE_HEIGHT * scale + "px");
+		$(".close").css("margin-top", CLOSE_MARGIN_TOP * scale + "px");
+		$(".close").css("margin-right", CLOSE_MARGIN_RIGHT * scale + "px");
+
+		$(".choose").css("width", CHOOSE_WIDTH * scale + "px");
+		$(".choose").css("height", CHOOSE_HEIGHT * scale + "px");
+		$(".choose").css("margin-left", CHOOSE_WIDTH * (-0.5) * scale + "px");
+		$(".choose").css("margin-top", CHOOSE_MARGIN_TOP  * scale + "px");
 	}).trigger("resize");
 }
 
@@ -92,6 +135,7 @@ function autoFitPos(selector, pic_width, pic_height) {
 		autoFitPos.did = [];
 		domObjs.each(function(i, e) {
 			var domObj = $(this);
+			
 			autoFitPos.did[i] = {};
 			autoFitPos.did[i].aml = parseInt(domObj.css("margin-left"));
 			autoFitPos.did[i].amt = parseInt(domObj.css("margin-top"));
