@@ -94,7 +94,7 @@ var PageTransitions = (function() {
         	pageFromTo(animcursorCheck(), 1, 0);
         	++animcursor;
         });
-        $(".step1,.step2,.step3").click(function() {
+        $(".step1,.step2,.step3,.gotoclass").click(function() {
         	pageFromTo(animcursorCheck(), 0, 2);
         	++animcursor;
         });

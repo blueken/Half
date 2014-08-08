@@ -61,14 +61,12 @@ a.step3 {
 }
 
 a.gotoclass {
-	background: url("../img/darrow.png") center center no-repeat;
-	text-indent: -2000em;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 30px;
-	height: 18px;
-	display: block;
+	background: url("../img/darrow.gif") center center no-repeat;
+	background-size: cover;
+	width: 62px;
+	height: 40px;
+	margin-left: 283px;
+	margin-top: 915px;
 }
 /*question*/
 .colorlayer {
@@ -196,6 +194,8 @@ ul.course_items a.item {
 }
 
 ul.course_items li img {
+	max-width: 323px;
+	height: auto;
 	float: left;
 }
 ul.course_items li h3, ul.course_items li p {
