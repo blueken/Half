@@ -34,7 +34,11 @@ var PageTransitions = (function() {
         };
 
 	function init() {
-
+		/*bob added*/
+		if (location.href.split("type=")[1]) {
+			current = 2;
+		}
+		/*bob added*/
 		$pages.each( function() {
 			var $page = $( this );
 			$page.data( 'originalClassList', $page.attr( 'class' ) );
@@ -96,6 +100,10 @@ var PageTransitions = (function() {
         });
         $(".step1,.step2,.step3,.gotoclass").click(function() {
         	pageFromTo(animcursorCheck(), 0, 2);
+        	++animcursor;
+        });
+        $(".control.prev").click(function() {
+        	pageFromTo(animcursorCheck(), 2, 0);
         	++animcursor;
         });
         $(".choose").click(function() {
@@ -520,6 +528,7 @@ var PageTransitions = (function() {
 		var $inpage = $pages.eq( old_idx );
 		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
 	}
+	
 	init();
 
 	return {

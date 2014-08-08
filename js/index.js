@@ -1,6 +1,4 @@
 $(function() {
-
-
 	bgAutoFitWindow(".autofit_window_bg");
 	bgAutoFitWindow(".autofit_qa_bg");
 
@@ -14,6 +12,14 @@ $(function() {
 
 	selectClassLogin();
 });
+
+
+function gotoClassPage() {
+	var type = getUrlParam('type');
+	if ($.trim(type)) {
+
+	};
+}
 function selectClassLogin() {
 	$(".control.next").click(function(){
 		var li_width = $(window).width() > 640 ? 130 : 90;
