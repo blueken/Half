@@ -135,9 +135,9 @@ a.choose {
 	overflow: hidden;
 	position: relative;
 }
-.pt-page-3 .header a.control {
+.pt-page-3 .header a.home {
 	display: block;
-	width: 82px;
+	width: 105px;
 	height: 82px;
 	line-height: 82px;
 	margin: 0 auto;
@@ -145,17 +145,10 @@ a.choose {
 	text-align: center;
 	top: 0;
 }
-.pt-page-3 .header a.prev {
-	left: 0px;
-}
-.pt-page-3 .header a.next {
-
-	right: 0px;
-}
 .pt-page-3 .mask {
-	width: 79%;
+	width: auto;
 	overflow: hidden;
-	margin: 0 10%;
+	margin: 0 0 0 105px;
 }
 .pt-page-3 ul.menu {
 	overflow: hidden;
@@ -267,8 +260,10 @@ ul.course_items li button {
 	ul.course_items li .price {
 		font-size: 1rem;
 	}
-	.pt-page-3 .header a.control {
-		
-		width: 41px;
+	.pt-page-3 .header a.home {
+		width: 60px;
+	}
+	.pt-page-3 .mask {
+		margin: 0 0 0 60px;
 	}
 }

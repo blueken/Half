@@ -102,7 +102,7 @@ var PageTransitions = (function() {
         	pageFromTo(animcursorCheck(), 0, 2);
         	++animcursor;
         });
-        $(".control.prev").click(function() {
+        $(".home").click(function() {
         	pageFromTo(animcursorCheck(), 2, 0);
         	++animcursor;
         });
