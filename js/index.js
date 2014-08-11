@@ -21,7 +21,7 @@ function cutCourseName() {
 	$(".course_items h3").each(function() {
 		var origin = $(this).html();
 		var max_len = 14;
-		
+
 		max_len = max_len + Math.floor(($(window).width() - 320) / 20);
 		
 		var disp = (origin.length > max_len) ? (origin.slice(0,max_len-1)+"...") : origin; 
@@ -54,7 +54,7 @@ function addSwipeMenu() {
           };
 
           n = n+"px";
-          $(".menu").animate({left:n, speed:'1500'});
+          $(".menu").animate({left:n, speed:'200'});
         },
         //Default is 75px, set to 0 for demo so any distance triggers swipe
          threshold:0

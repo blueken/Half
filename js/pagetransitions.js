@@ -112,21 +112,7 @@ var PageTransitions = (function() {
         });
 
 
-		// $(".pt-page-1").swipe( {
-	 //        //Generic swipe handler for all directions
-	 //        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-	 //          if (direction == 'up') {
-	 //          	pageFromTo(animcursorCheck(), 0, 2);
-  //       		++animcursor;
-	 //          };
-	          
-	 //        },
-	 //        //Default is 75px, set to 0 for demo so any distance triggers swipe
-	 //         threshold:75
-	 //      });
-
-        /*bob added end*/
-        $(".pt-page-1").scroll(function() {
+		$(".pt-page-1").scroll(function() {
         	var sH = $(".pt-page-1").get(0).scrollHeight;
         	var oH = $(".pt-page-1").get(0).offsetHeight;
         	var sT = $(".pt-page-1").get(0).scrollTop;
@@ -136,6 +122,19 @@ var PageTransitions = (function() {
         		++animcursor;
         	};
         });
+
+        $(".pt-page-3").scroll(function() {
+
+        	var sT = $(".pt-page-3").get(0).scrollTop;
+
+        	if ( sT <= 0 ) { 
+        		pageFromTo(animcursorCheck(), 2, 0);
+        		++animcursor;
+        	};
+        });
+
+        /*bob added end*/
+
 	}
 	function pageFromTo(options, from , to ) {
 		var animation = (options.animation) ? options.animation : options;
