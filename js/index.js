@@ -20,7 +20,11 @@ $(function() {
 function cutCourseName() {
 	$(".course_items h3").each(function() {
 		var origin = $(this).html();
-		var disp = (origin.length > 14) ? (origin.slice(0,13)+"...") : origin; 
+		var max_len = 14;
+		
+		max_len = max_len + Math.floor(($(window).width() - 320) / 20);
+		
+		var disp = (origin.length > max_len) ? (origin.slice(0,max_len-1)+"...") : origin; 
 		$(this).html(disp);
 		
 	});

@@ -161,12 +161,15 @@ a.choose {
 .pt-page-3 ul.menu li {
 	float: left;
 
-	background-color: #d65869;
+	
 	margin-right: 10px;
 	border-radius: 6px;
 	padding: 0 10px;
 	width: 130px;
 	text-align: center;
+}
+.pt-page-3 ul.menu li:hover,  .pt-page-3 ul.menu li.selected{
+	background-color: #d65869;
 }
 ul.course_items {
 	max-width: 640px;
