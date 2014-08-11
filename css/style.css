@@ -34,11 +34,27 @@ img.autofit_window_bgheight {
 	text-indent: -2000em;
 
 }
-a.question {
-	width: 175px;
+a.backhome {
+
+	width: 262.5px;
+	height: 67.5px;
+	margin-left: 20px;
+	margin-top: 290px;*/
+/*	width: 175px;
 	height: 45px;
-	margin-left: 435px;
-	margin-top: 313px;
+	margin-left: 30px;
+	margin-top: 307px;*/
+}
+a.question {
+
+	width: 262.5px;
+	height: 67.5px;
+	margin-left: 400px;
+	margin-top: 290px;*/
+/*	width: 175px;
+	height: 45px;
+	margin-left: 431px;
+	margin-top: 307px;*/
 }
 
 a.step1 {
