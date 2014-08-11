@@ -11,9 +11,51 @@ $(function() {
 	qaAutoFitWindow();
 
 	selectClassLogin();
+
+	
+	addSwipeMenu();
+	cutCourseName();
 });
 
+function cutCourseName() {
+	$(".course_items h3").each(function() {
+		var origin = $(this).html();
+		var disp = (origin.length > 14) ? (origin.slice(0,13)+"...") : origin; 
+		$(this).html(disp);
+		
+	});
+}
 
+function addSwipeMenu() {
+	$(".mask").swipe( {
+        //Generic swipe handler for all directions
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+          // $(this).text("You swiped " + direction ); 
+          var step = $(".mask").width();
+          if (direction == 'left') {
+          	step = -step;
+          } else if(direction == 'right') {
+          	step = step;
+          }
+          
+          var o = parseInt($(".menu").css("left"));
+          o = isNaN(o) ? 0 : o;
+          var n = o + step;
+          if (n > 0) { n = 0; };
+          var li_width = parseInt($(".menu").children().eq(0).css("margin-right")) + parseInt($(".menu").children().eq(0).width());
+          var lis_width =  li_width * $(".menu").children().length;
+          var mask_width = $(".mask").width()
+          if (n + lis_width < 0) { 
+          	n =  - lis_width; 
+          };
+
+          n = n+"px";
+          $(".menu").animate({left:n, speed:'1500'});
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+         threshold:0
+      });
+}
 function gotoClassPage() {
 	var type = getUrlParam('type');
 	if ($.trim(type)) {

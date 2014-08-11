@@ -61,7 +61,7 @@ a.step3 {
 }
 
 a.gotoclass {
-	background: url("../img/darrow.gif") center center no-repeat;
+	background: url("../img/darrow.png") center center no-repeat;
 	background-size: cover;
 	width: 62px;
 	height: 40px;
@@ -156,6 +156,7 @@ a.choose {
 	height: 42px;
 	margin-top: 20px;
 	width: 1200px;
+	position: relative;
 }
 .pt-page-3 ul.menu li {
 	float: left;
@@ -257,6 +258,9 @@ ul.course_items li button {
 		padding: 3% 3% 3% 2%;
 		
 	}
+	ul.course_items li p {
+		font-size: 0.8rem;
+	}
 	ul.course_items li .price {
 		font-size: 1rem;
 	}
@@ -267,3 +271,7 @@ ul.course_items li button {
 		margin: 0 0 0 60px;
 	}
 }
+
+
+
+.banner ul li { float: left; }

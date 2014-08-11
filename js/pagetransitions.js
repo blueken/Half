@@ -111,6 +111,20 @@ var PageTransitions = (function() {
         	++animcursor;
         });
 
+
+		$(".pt-page-1").swipe( {
+	        //Generic swipe handler for all directions
+	        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+	          if (direction == 'up') {
+	          	pageFromTo(animcursorCheck(), 0, 2);
+        		++animcursor;
+	          };
+	          
+	        },
+	        //Default is 75px, set to 0 for demo so any distance triggers swipe
+	         threshold:0
+	      });
+
         /*bob added end*/
 
 	}
