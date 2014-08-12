@@ -162,9 +162,9 @@ a.choose {
 	top: 0;
 }
 .pt-page-3 .mask {
-	width: auto;
+	width: 80%;
 	overflow: hidden;
-	margin: 0 0 0 105px;
+	margin: 0 45px 0 45px;
 }
 .pt-page-3 ul.menu {
 	overflow: hidden;
@@ -185,6 +185,9 @@ a.choose {
 	text-align: center;
 }
 /*.pt-page-3 ul.menu li:hover,  */
+.pt-page-3 ul.menu li.back{
+	width: 70px;
+}
 .pt-page-3 ul.menu li.selected{
 	background-color: #d65869;
 }
@@ -233,7 +236,26 @@ ul.course_items li button {
 	background: url("../img/detail.png") center center no-repeat;
 	/*margin-left: 20px;*/
 }
-
+a.prev {
+	display: inline-block;
+	width: 30px;
+	height: 80px;
+	line-height: 80px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+a.next {
+	display: inline-block;
+	line-height: 80px;
+	width: 30px;
+	height: 80px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	text-align: center;
+}
 
 @media (max-width: 640px) {
 	/*select class*/
@@ -288,10 +310,27 @@ ul.course_items li button {
 		width: 60px;
 	}
 	.pt-page-3 .mask {
-		margin: 0 0 0 60px;
+		margin: 0 0 0 30px;
+	}
+	a.prev {
+		display: inline-block;
+		width: 30px;
+		height: 80px;
+		line-height: 80px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	a.next {
+		display: inline-block;
+		line-height: 80px;
+		width: 30px;
+		height: 80px;
+		position: absolute;
+		top: 0px;
+		right: 0px;
 	}
 }
-
 
 
 .banner ul li { float: left; }

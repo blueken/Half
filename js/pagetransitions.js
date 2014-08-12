@@ -46,15 +46,7 @@ var PageTransitions = (function() {
 
 		$pages.eq( current ).addClass( 'pt-page-current' );
 
-		/*
-		$( '#dl-menu' ).dlmenu( {
-			animationClasses : { in : 'dl-animate-in-2', out : 'dl-animate-out-2' },
-			onLinkClick : function( el, ev ) {
-				ev.preventDefault();
-				nextPage( el.data( 'animation' ) );
-			}
-		} );
-		*/
+
 
         var animcursorCheck = function() {
             if( isAnimating ) {
@@ -116,25 +108,25 @@ var PageTransitions = (function() {
         	++animcursor;
         });
 
-        $(".pt-page-1").swipe( {
-        //Generic swipe handler for all directions
-        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        	// alert("You swiped " + direction ); 
-        	if (direction == 'up') {
-        		var sH = $(".pt-page-1").get(0).scrollHeight;
-	        	var oH = $(".pt-page-1").get(0).offsetHeight;
-	        	var sT = $(".pt-page-1").get(0).scrollTop;
+       //  $(".pt-page-1").swipe( {
+       //  //Generic swipe handler for all directions
+       //  swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+       //  	// alert("You swiped " + direction ); 
+       //  	if (direction == 'up') {
+       //  		var sH = $(".pt-page-1").get(0).scrollHeight;
+	      //   	var oH = $(".pt-page-1").get(0).offsetHeight;
+	      //   	var sT = $(".pt-page-1").get(0).scrollTop;
 
-	        	if ( sT >= sH - oH ) { 
-	        		pageFromTo(animcursorCheck(), 0, 2);
-	        		++animcursor;
-	        	};
-        	};
+	      //   	if ( sT >= sH - oH ) { 
+	      //   		pageFromTo(animcursorCheck(), 0, 2);
+	      //   		++animcursor;
+	      //   	};
+       //  	};
         	
-        },
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
-         threshold:75
-      	});
+       //  },
+       //  //Default is 75px, set to 0 for demo so any distance triggers swipe
+       //   threshold:75
+      	// });
         
 
 
@@ -150,19 +142,19 @@ var PageTransitions = (function() {
         	};
         });
 
-        $(".pt-page-3").scroll(function() {
+        // $(".pt-page-3").scroll(function() {
 
-        	var sT = $(".pt-page-3").get(0).scrollTop;
+        // 	var sT = $(".pt-page-3").get(0).scrollTop;
 
-        	if ( sT <= 0 ) { 
-        		var s1 = "http://app.class2.hujiang.com/classzt/2014fxb_m";
-	        	var s2 = "http://app.class2.hujiang.com/classzt/2014fxb_app";
-	        	var hurl = (location.href.indexOf("2014fxb_m") > 0) ? s1 : s2;
-	        	location.href = hurl;
-        		// pageFromTo(animcursorCheck(), 2, 0);
-        		// ++animcursor;
-        	};
-        });
+        // 	if ( sT <= 0 ) { 
+        // 		var s1 = "http://app.class2.hujiang.com/classzt/2014fxb_m";
+	       //  	var s2 = "http://app.class2.hujiang.com/classzt/2014fxb_app";
+	       //  	var hurl = (location.href.indexOf("2014fxb_m") > 0) ? s1 : s2;
+	       //  	location.href = hurl;
+        // 		// pageFromTo(animcursorCheck(), 2, 0);
+        // 		// ++animcursor;
+        // 	};
+        // });
 
         /*bob added end*/
 

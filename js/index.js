@@ -13,10 +13,33 @@ function init() {
 	selectClassLogin();
 
 	
-	addSwipeMenu();
+	// addSwipeMenu();
 	cutCourseName();
+	locateType();
 }
 
+function locateType() {
+	var i = 0
+	var j = 0;
+	$(".menu li").each(function() {
+		if ($(this).attr("class") != "selected") {
+			i += 1;
+		} else {
+			j = i;
+		};
+	});
+	
+	var li_width = parseInt($(".menu").children().eq(0).css("margin-right")) + parseInt($(".menu").children().eq(0).width());
+    var lis_width =  li_width * $(".menu").children().length;
+	var step = $(window).width() * 0.65;
+	var pos = lis_width - step;
+	var oldpos = parseInt($("ul.menu").css("margin-left"));
+	var newpos = oldpos + step;
+	// alert(lis_width +","+ step  +","+ pos);
+	pos = -1 * (j)*li_width;
+	$("ul.menu").css("marginLeft",pos+'px');
+
+}
 function cutCourseName() {
 	$(".course_items h3").each(function() {
 		var origin = $(this).html();
@@ -86,6 +109,7 @@ function selectClassLogin() {
 		var step = $(window).width() * 0.65;
 		var oldpos = parseInt($("ul.menu").css("margin-left"));
 		var newpos = oldpos + step;
+		if (newpos > 0) { newpos = 0;};
 		if (oldpos < 0) {
 
 			$("ul.menu").animate({
