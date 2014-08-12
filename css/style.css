@@ -191,6 +191,7 @@ a.choose {
 .pt-page-3 ul.menu li.selected{
 	background-color: #d65869;
 }
+.pt-page-3 a, .pt-page-3 a:link, .pt-page-3 a:visited, .pt-page-3 a:active, .pt-page-3 a:hover {color: white;}
 ul.course_items {
 	max-width: 640px;
 	margin: 0 auto;
