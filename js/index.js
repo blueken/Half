@@ -1,11 +1,11 @@
 $(function() {
+	
+
+});
+
+function init() {
 	bgAutoFitWindow(".autofit_window_bg");
 	bgAutoFitWindow(".autofit_qa_bg");
-
-	// $(window).bind("resize", function(){
-	// 		// autoFitPos('.clever');
-	// 		// autoResizeBg();
-	// }).trigger("resize");
 
 	domAutoFitWindow(".clever");
 	qaAutoFitWindow();
@@ -15,7 +15,7 @@ $(function() {
 	
 	addSwipeMenu();
 	cutCourseName();
-});
+}
 
 function cutCourseName() {
 	$(".course_items h3").each(function() {

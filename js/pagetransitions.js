@@ -103,13 +103,36 @@ var PageTransitions = (function() {
         	++animcursor;
         });
         $(".home").click(function() {
-        	pageFromTo(animcursorCheck(), 2, 0);
-        	++animcursor;
+        	// pageFromTo(animcursorCheck(), 2, 0);
+        	// ++animcursor;
+        	location.reload();
         });
         $(".choose").click(function() {
         	pageFromTo(animcursorCheck(), 1, 2);
         	++animcursor;
         });
+
+        $(".pt-page-1").swipe( {
+        //Generic swipe handler for all directions
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        	// alert("You swiped " + direction ); 
+        	if (direction == 'up') {
+        		var sH = $(".pt-page-1").get(0).scrollHeight;
+	        	var oH = $(".pt-page-1").get(0).offsetHeight;
+	        	var sT = $(".pt-page-1").get(0).scrollTop;
+
+	        	if ( sT >= sH - oH ) { 
+	        		pageFromTo(animcursorCheck(), 0, 2);
+	        		++animcursor;
+	        	};
+        	};
+        	
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+         threshold:75
+      	});
+        
+
 
 
 		$(".pt-page-1").scroll(function() {
@@ -128,8 +151,9 @@ var PageTransitions = (function() {
         	var sT = $(".pt-page-3").get(0).scrollTop;
 
         	if ( sT <= 0 ) { 
-        		pageFromTo(animcursorCheck(), 2, 0);
-        		++animcursor;
+        		location.reload();
+        		// pageFromTo(animcursorCheck(), 2, 0);
+        		// ++animcursor;
         	};
         });
 
@@ -137,6 +161,7 @@ var PageTransitions = (function() {
 
 	}
 	function pageFromTo(options, from , to ) {
+		
 		var animation = (options.animation) ? options.animation : options;
 
 		if( isAnimating ) {
@@ -543,12 +568,26 @@ var PageTransitions = (function() {
 		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
 	}
 	/*bob added end*/
-	function resetPageByIdx( idx, old_idx ) {
+	function resetPageAll(from, to) {
 		/*this function added by bob*/
-		var $outpage = $pages.eq( idx );
-		$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
-		var $inpage = $pages.eq( old_idx );
+		$("#pt-main .pt-page").each(function(){
+			var $outpage = $(this);
+			$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
+		});
+
+		$pages = $main.children( 'div.pt-page' );
+		var $inpage = $pages.eq( from );
 		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
+		$inpage = $pages.eq( to );
+		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
+
+
+				// var $inpage = $pages.eq( old_idx );
+		// $inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
+		// var $outpage = $pages.eq( idx );
+		// $outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
+		// var $inpage = $pages.eq( old_idx );
+		// $inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
 	}
 	
 	init();

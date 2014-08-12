@@ -184,7 +184,8 @@ a.choose {
 	width: 130px;
 	text-align: center;
 }
-.pt-page-3 ul.menu li:hover,  .pt-page-3 ul.menu li.selected{
+/*.pt-page-3 ul.menu li:hover,  */
+.pt-page-3 ul.menu li.selected{
 	background-color: #d65869;
 }
 ul.course_items {
