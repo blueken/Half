@@ -105,7 +105,11 @@ var PageTransitions = (function() {
         $(".home").click(function() {
         	// pageFromTo(animcursorCheck(), 2, 0);
         	// ++animcursor;
-        	location.reload();
+        	
+        	var s1 = "http://app.class2.hujiang.com/classzt/2014fxb_m";
+        	var s2 = "http://app.class2.hujiang.com/classzt/2014fxb_app";
+        	var hurl = (location.href.indexOf("2014fxb_m") > 0) ? s1 : s2;
+        	location.href = hurl;
         });
         $(".choose").click(function() {
         	pageFromTo(animcursorCheck(), 1, 2);
@@ -151,7 +155,10 @@ var PageTransitions = (function() {
         	var sT = $(".pt-page-3").get(0).scrollTop;
 
         	if ( sT <= 0 ) { 
-        		location.reload();
+        		var s1 = "http://app.class2.hujiang.com/classzt/2014fxb_m";
+	        	var s2 = "http://app.class2.hujiang.com/classzt/2014fxb_app";
+	        	var hurl = (location.href.indexOf("2014fxb_m") > 0) ? s1 : s2;
+	        	location.href = hurl;
         		// pageFromTo(animcursorCheck(), 2, 0);
         		// ++animcursor;
         	};
