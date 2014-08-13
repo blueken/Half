@@ -137,8 +137,16 @@ var PageTransitions = (function() {
         	var sT = $(".pt-page-1").get(0).scrollTop;
 
         	if ( sT >= sH - oH ) { 
-        		pageFromTo(animcursorCheck(), 0, 2);
-        		++animcursor;
+        		if( typeof(g_slide_once) == "undefined" ) {
+        			
+        			g_slide_once = setTimeout(function(){
+        			pageFromTo(animcursorCheck(), 0, 2);
+        			++animcursor;
+        			} , 100);
+        		}else {
+        			
+        		}
+        		
         	};
         });
 
