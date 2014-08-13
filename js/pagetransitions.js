@@ -199,8 +199,8 @@ var PageTransitions = (function() {
 
 		} else if ((from === 0) && (to === 2)) {
 
-				outClass = 'pt-page-moveToTopEasing pt-page-ontop';
-				inClass = 'pt-page-moveFromBottom';
+				outClass = 'pt-page-moveToTopFade';
+				inClass = 'pt-page-moveFromBottomFade';
 
 		} else if ((from === 2) && (to === 0)) {
 				outClass = 'pt-page-moveToBottomEasing pt-page-ontop';
